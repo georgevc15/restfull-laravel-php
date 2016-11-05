@@ -1,7 +1,7 @@
 # Metting app
 
-The app allows users to register to the app. They can register and unregister to a meetings
-Users can create, update and delete meetings
+Logged in users can create meetings, register and unregister to a meeting.
+The apps also allows users to create, update and delete meetings.
 
 ## Technologies used
 
