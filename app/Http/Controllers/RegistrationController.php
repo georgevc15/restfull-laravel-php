@@ -15,7 +15,33 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
-        return "It works";
+        $meeting_id = $request->input('meeting_id');
+        $user_id = $request->input('user_id');
+
+        $meeting = [
+           'title' => 'Title',
+            'description' => 'Description',
+            'time' => 'Time',
+            'view_meeting' => [
+                'href' => 'api/v1/meeting',
+                'method' => 'GET'
+            ]
+        ];
+
+        $user = [
+            'name' => 'Name'
+        ];
+
+        $response = [
+          'msg' => 'User registered for meeting',
+          'meeting' => $meeting,
+          'user' => $user,
+          'unregister' => [
+              'href' => 'api/v1/meeting/registration/1',
+              'method' => 'DELETE'
+          ]
+        ];
+        return response()->json($response, 201);
     }
 
 
