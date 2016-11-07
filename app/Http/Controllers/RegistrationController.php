@@ -53,6 +53,30 @@ class RegistrationController extends Controller
      */
     public function destroy($id)
     {
-        return "It works";
+        $meeting = [
+            'title' => 'Title',
+            'description' => 'Description',
+            'time' => 'Time',
+            'view_meeting' => [
+                'href' => 'api/v1/meeting/1',
+                'method' => 'GET'
+            ]
+        ];
+
+        $user = [
+            'name' => 'Name'
+        ];
+
+        $response = [
+            'msg' => 'User UNregistered for meeting',
+            'meeting' => $meeting,
+            'user' => $user,
+            'register' => [
+                'href' => 'api/v1/meeting/registration',
+                'method' => 'POST',
+                'params' => 'user_id, meeting_id'
+            ]
+        ];
+        return response()->json($response, 201);
     }
 }

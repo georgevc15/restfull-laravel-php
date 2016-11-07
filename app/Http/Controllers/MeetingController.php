@@ -58,7 +58,8 @@ class MeetingController extends Controller
        $meeting = [
            'title' => $title,
            'description' => $description,
-           'time' => $user_id,
+           'time' => $time,
+           'user_id' => $user_id,
            'view_meeting' => [
                'href' => 'api/v1/meeting/1',
                'method' => 'GET'
